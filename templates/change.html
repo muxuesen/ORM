@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+</head>
+<body>
+<h3>修改图书</h3>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">名称</label>
+        <input type="text" class="form-control" name="title" id="exampleInputEmail1" value="{{ book_obj.title }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">价格</label>
+        <input type="text" class="form-control" name="price" id="exampleInputEmail1" value="{{ book_obj.price }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">出版社</label>
+        <input type="text" class="form-control" name="publish" id="exampleInputEmail1" value="{{ book_obj.publish }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">出版时间</label>
+        <input type="date" class="form-control" name="pub_date" id="exampleInputPassword1"
+               value="{{ book_obj.pub_date|date:"Y-m-d" }}">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+</body>
+</html>
